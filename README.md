@@ -1,13 +1,13 @@
 <div align="center">
 <p align="center">
   <h2>MMAudio</h2>
-  <a href="https://arxiv.org/abs/2412.15322">Paper</a> | <a href="https://hkchengrex.github.io/MMAudio">Webpage</a> | <a href="https://huggingface.co/hkchengrex/MMAudio/tree/main">Models</a> | <a href="https://huggingface.co/spaces/hkchengrex/MMAudio"> Huggingface Demo</a> | <a href="https://colab.research.google.com/drive/1TAaXCY2-kPk4xE4PwKB3EqFbSnkUuzZ8?usp=sharing">Colab GUI</a> | <a href="https://replicate.com/zsxkib/mmaudio">Replicate Demo</a>
+  <a href="https://arxiv.org/abs/2412.15322">Paper</a> | <a href="https://hkchengrex.github.io/MMAudio">Webpage</a> | <a href="https://huggingface.co/hkchengrex/MMAudio/tree/main">Models</a> | <a href="https://huggingface.co/spaces/hkchengrex/MMAudio"> Huggingface Demo</a> | <a href="https://github.com/qsardor/MMAudio/blob/main/MMAudio_GUI.ipynb">Colab GUI</a> | <a href="https://github.com/qsardor/MMAudio/blob/main/MMAudio_NoUI.ipynb">Colab NoUI</a> | <a href="https://replicate.com/zsxkib/mmaudio">Replicate Demo</a>
 </p>
 </div>
 
 ## [Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis](https://hkchengrex.github.io/MMAudio)
 
-[Ho Kei Cheng](https://hkchengrex.github.io/), [Masato Ishii](https://scholar.google.co.jp/citations?user=RRIO1CcAAAAJ), [Akio Hayakawa](https://scholar.google.com/citations?user=sXAjHFIAAAAJ), [Takashi Shibuya](https://scholar.google.com/citations?user=XCRO260AAAAJ), [Alexander Schwing](https://www.alexander-schwing.de/), [Yuki Mitsufuji](https://www.yukimitsufuji.com/)
+[Ho Kei Cheng](https://hkchengrex.github.io/), [Masato Ishii](https://scholar.google.co.jp/citations?user=RRIO1CcAAAAJ), [Akio Hayakawa](https://scholar.google.com/citations?user=sXAjHFIAAAAJ), [Takashi Shibuya](https://scholar.google.com/citations?user=XCRO260AAAAJ), [Alexander Schwing](https://www.alexander-schwing.de/), [Yuki Mitsufuji](https://www.yukimitsufuji.com/),  [Qurbonov Sardor](https://github.com/qsardor) 
 
 University of Illinois Urbana-Champaign, Sony AI, and Sony Group Corporation
 
@@ -38,7 +38,7 @@ For more results, visit https://hkchengrex.com/MMAudio/video_main.html.
 
 ## Installation
 
-We have only tested this on Ubuntu.
+They tested on Ubuntu. But i recommend use Google Colab if you wanna use it easy (if you don't have a strong pc)
 
 ### Prerequisites
 
@@ -147,7 +147,7 @@ See [EVAL.md](docs/EVAL.md).
 MMAudio was trained on several datasets, including [AudioSet](https://research.google.com/audioset/), [Freesound](https://github.com/LAION-AI/audio-dataset/blob/main/laion-audio-630k/README.md), [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/vggsound/), [AudioCaps](https://audiocaps.github.io/), and [WavCaps](https://github.com/XinhaoMei/WavCaps). These datasets are subject to specific licenses, which can be accessed on their respective websites. We do not guarantee that the pre-trained models are suitable for commercial use. Please use them at your own risk.
 
 ## Update Logs
-
+- 2025-01-02: Google Colab GUI version successfully launched and it worked.
 - 2024-12-23: Added training and batch evaluation scripts.
 - 2024-12-14: Removed the `ffmpeg<7` requirement for the demos by replacing `torio.io.StreamingMediaDecoder` with `pyav` for reading frames. The read frames are also cached, so we are not reading the same frames again during reconstruction. This should speed things up and make installation less of a hassle.
 - 2024-12-13: Improved for-loop processing in CLIP/Sync feature extraction by introducing a batch size multiplier. We can approximately use 40x batch size for CLIP/Sync without using more memory, thereby speeding up processing. Removed VAE encoder during inference -- we don't need it.
@@ -175,3 +175,4 @@ Many thanks to:
 - [BigVGAN](https://github.com/NVIDIA/BigVGAN)
 - [Synchformer](https://github.com/v-iashin/Synchformer) 
 - [EDM2](https://github.com/NVlabs/edm2) for the magnitude-preserving network architecture
+- [hkchengrex](https://github.com/hkchengrex/MMAudio) for the original code
